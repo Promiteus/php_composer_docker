@@ -33,8 +33,10 @@ services:
       DB_DATABASE: php_native #Имя базы данных
       DB_USERNAME: root #Имя пользователя для подключения к базе данных
       DB_PASSWORD: 123 #Пароль для подключения к базе данных
+      PHP_IDE_CONFIG: serverName=NativePhp #xdebug
     volumes:
       - .:/var/www
+      - ./docker/php_fpm/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini #xdebug конфигурация для подключения к ide
     networks:
       - comp-net
 
